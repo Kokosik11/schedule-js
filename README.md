@@ -11,9 +11,9 @@ npm install
 npm run dev
 ```
 * Открытие в браузере
-
->localhost:3000
-
+```
+localhost:3000
+```
 ## API проекта
 ---
 ### GET запросы:
