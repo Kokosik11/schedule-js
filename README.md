@@ -30,20 +30,24 @@
 
 * "/team/create" - создаёт новую команду. Входные данные(через json):
 
-<const team = {
+```
+const team = {
     teamName: "test",
     teamLogoURL: "/test/test.png"
-}>
+}
+```
 
 * "/match/create" - создаёт новый матч. Входные данные(через json):
 
-<let match = {
+```
+let match = {
     matchDate: new Date("12.10.2021"),
     matchTeams: [
         firstTeamID,
         secondTeamID
     ]
-}>
+}
+```
 
 ***
 ### В файле static/scripts/script.js есть примеры запросов
