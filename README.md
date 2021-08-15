@@ -3,16 +3,16 @@
 ## Шаги для запуска проекта
 
 * Инициализация проекта: 
-
-<npm install>
-
+```npm
+npm install
+```
 * Запуск проекта (с помощью nodemon)
-
-<npm run dev>
-
+```npm
+npm run dev
+```
 * Открытие в браузере
 
-[localhost:3000]: localhost:3000
+>localhost:3000
 
 ## API проекта
 ---
