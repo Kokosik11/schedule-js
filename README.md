@@ -30,7 +30,7 @@
 
 * "/team/create" - создаёт новую команду. Входные данные(через json):
 
-```
+```JS
 const team = {
     teamName: "test",
     teamLogoURL: "/test/test.png"
@@ -39,7 +39,7 @@ const team = {
 
 * "/match/create" - создаёт новый матч. Входные данные(через json):
 
-```
+```JS
 let match = {
     matchDate: new Date("12.10.2021"),
     matchTeams: [
