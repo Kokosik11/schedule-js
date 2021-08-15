@@ -16,9 +16,10 @@ exports.getAllMatches = (req, res) => {
 exports.getMatch = (req, res) => {
     const { matchDate } = req.params;
 
-    console.log(req.body)
+    // console.log(matchDate)
+    // console.log(new Date(matchDate))
 
-    MatchModel.findOne({ matchDate: matchDate }, (err, match) => {
+    MatchModel.findOne({ matchDate: new Date(matchDate) }, (err, match) => {
         if(err || !match) {
             console.log("Матч не найден")
             res.send({err:"Матч не найден"});
