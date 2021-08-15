@@ -19,7 +19,7 @@ exports.getMatch = (req, res) => {
     // console.log(matchDate)
     // console.log(new Date(matchDate))
 
-    MatchModel.findOne({ matchDate: new Date(matchDate) }, (err, match) => {
+    MatchModel.find({ matchDate: new Date(matchDate) }, (err, match) => {
         if(err || !match) {
             console.log("Матч не найден")
             res.send({err:"Матч не найден"});

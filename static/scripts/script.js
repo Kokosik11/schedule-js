@@ -21,32 +21,32 @@
 /* --------------------- Получение команд и создание объекта матча GET --------------------- */
 
 
-let teams = [];
-let match = {
-    matchDate: "12.11.2021",
-    matchTeams: []
-};
+// let teams = [];
+// let match = {
+//     matchDate: "12.11.2021",
+//     matchTeams: []
+// };
 
-fetch('/team/Barris')
-    .then(response => response.ok ? response : Promise.reject(response))
-    .then(response => response.json()) // или как текст `response.text()`
-    .then(json => {
-        teams.push(json);
-        match.matchTeams.push(json._id)
-    })
+// fetch('/team/Barris')
+//     .then(response => response.ok ? response : Promise.reject(response))
+//     .then(response => response.json()) // или как текст `response.text()`
+//     .then(json => {
+//         teams.push(json);
+//         match.matchTeams.push(json._id)
+//     })
 
-fetch('/team/Griffons')
-    .then(response => response.ok ? response : Promise.reject(response))
-    .then(response => response.json()) // или как текст `response.text()`
-    .then(json => {
-        teams.push(json);
-        match.matchTeams.push(json._id);
-        createMatch(match);
-    })
+// fetch('/team/Griffons')
+//     .then(response => response.ok ? response : Promise.reject(response))
+//     .then(response => response.json()) // или как текст `response.text()`
+//     .then(json => {
+//         teams.push(json);
+//         match.matchTeams.push(json._id);
+//         createMatch(match);
+//     })
 
 
-console.log(teams);
-console.log(match);
+// console.log(teams);
+// console.log(match);
 
 /* --------------------- Создание матча POST --------------------- */
 
