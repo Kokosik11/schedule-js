@@ -1,14 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <title>UHL | Главная</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </head>
 <body>
-    
-    <script src="/scripts/script.js"></script>
+    <header>
+        <img alt="logo" src="./assets/imgs/logo.png">
+        <nav class="pages">
+            <ul>
+                <li><a class="active" href="/">Главная</a></li>
+                <li><a href="/dist/pages/teams">Команды</a></li>
+                <li><a href="/">Таблица</a></li>
+                <li><a href="/">Статистика</a></li>
+                <li><a href="/">Галерея</a></li>
+                <li><a href="/">Контакты</a></li>
+            </ul>
+        </nav>
+        <nav class="social-links">
+            <ul>
+                <li><span class="iconify" data-inline="false" data-icon="entypo-social:vk-with-circle"></span></li>
+                <li><span class="iconify" data-inline="false" data-icon="akar-icons:facebook-fill"></span></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section class="header-content">
+                <div class="header-heading">
+                    <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+                    <button>
+                        <span class="iconify" data-inline="false" data-icon="akar-icons:link-out"></span>
+                        Подробнее
+                    </button>
+                </div>
+                <aside class="header-image">
+                    <img src="./assets/imgs/logo.png" alt="logo">
+                </aside>
+            </section>
+
+            <section class="afisha">
+                <div class="afisha-content">
+
+                    <div class="team first-team">
+                        <span class="team-name">Барыс-1</span>
+                        <img src="./assets/imgs/4639021344470c8814e9f799073924a5 1.png" alt="Барыс-1" style="width: 200px;">
+                    </div>
+
+                    <div class="versus">VS</div>
+
+                    <div class="team second-team">
+                        <span class="team-name">Грифоны-1</span>
+                        <img src="./assets/imgs/logo.png" alt="Барыс-1" style="width: 200px;">
+                    </div>
+
+                    <div class="bottom">
+                        <div class="date">1 сентября</div>
+                        <nav class="text-live">
+                            <a href="#">
+                                <span class="iconify" data-inline="false" data-icon="akar-icons:link-out" style="color: #FF4957; font-size: 26px;"></span>
+                                <span class="text-live_title">Текстовая трансляция</span>
+                            </a>
+                        </nav>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="schedule">
+                <div class="schedule-block">
+                    <h2 class="schedule-heading">Календарь матчей</h2>
+
+                    <div class="schedule-content">
+                        <div class="schedule-header">
+                            <div class="month-content">
+                                <div class="arrow" data-direction="-1"><span class="iconify" data-inline="false" data-icon="akar-icons:arrow-left"></span></div>
+                                <div class="month"></div>
+                                <div class="arrow" data-direction="1"><span class="iconify" data-inline="false" data-icon="akar-icons:arrow-right"></span></div>
+                            </div>
+                        </div>
+
+                        <div class="ceils-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="news">
+                <h2>Новости</h2>
+                <div class="news-content">
+                    <div class="news-block">
+                        <img src="./assets/imgs/news-1.png" alt="news photo">
+                        <div><span>Читать</span></div>
+                        <h3 class="news-heading">Это заголовок к новостям</h3>
+                    </div>
+                    <div class="news-block">
+                        <img src="./assets/imgs/news-2.png" alt="news photo">
+                        <div><span>Читать</span></div>
+                        <h3 class="news-heading">Это заголовок к новостям</h3>
+                    </div>
+                    <div class="news-block">
+                        <img src="./assets/imgs/news-3.png" alt="news photo">
+                        <div><span>Читать</span></div>
+                        <h3 class="news-heading">Это заголовок к новостям</h3>
+                    </div>
+                    <div class="news-block">
+                        <img src="./assets/imgs/news-4.png" alt="news photo">
+                        <div><span>Читать</span></div>
+                        <h3 class="news-heading">Это заголовок к новостям</h3>
+                    </div>
+                    <div class="news-block">
+                        <img src="./assets/imgs/news-5.png" alt="news photo">
+                        <div><span>Читать</span></div>
+                        <h3 class="news-heading">Это заголовок к новостям</h3>
+                    </div>
+                    <div class="news-block">
+                        <img src="./assets/imgs/news-6.png" alt="news photo">
+                        <div><span>Читать</span></div>
+                        <h3 class="news-heading">Это заголовок к новостям</h3>
+                    </div>
+                </div>
+                <button class="more-news">
+                    <div class="btn-icon"><span class="iconify" data-inline="false" data-icon="ant-design:cloud-sync-outlined"></span></div>
+                    <span>Загрузить ещё</span>
+                </button>
+            </section>
+
+            <section class="main-sections">
+                <h2>Основные разделы</h2>
+                <div class="sections-content">
+                    <div class="section">
+                        <div class="section-content">
+                            <h3>Турнирная таблица</h3>
+                            <div class="text">
+                                В данном разделе есть возможность просмотреть турнирную таблицу.
+                                В ней приведины все матчи текущего сезона.
+                            </div>
+                            <button>
+                                <span class="iconify" data-inline="false" data-icon="akar-icons:link-out" style="color: #FF4957; font-size: 26px;"></span>
+                                <span>Таблицы</span>
+                            </button>
+                        </div>
+                        <div class="section-icon">
+                            <img src="./assets/imgs/table.png" alt="table">
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-content">
+                            <h3>Список команд</h3>
+                            <div class="text">
+                                В данном разделе есть возможность просмотреть список команд.
+                                Сезонную и общую статистику каждой команды, а так же состав игроков.
+                            </div>
+                            <button>
+                                <span class="iconify" data-inline="false" data-icon="akar-icons:link-out" style="color: #FF4957; font-size: 26px;"></span>
+                                <span>Команды</span>
+                            </button>
+                        </div>
+                        <div class="section-icon">
+                            <img src="./assets/imgs/team.png" alt="team">
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-content">
+                            <h3>Статистика</h3>
+                            <div class="text">
+                                В данном разделе есть возможность просмотреть статистику.
+                                Сезонную и общую статистику игроков, а так же лучших бомбардиров, вратарей и т.д.
+                            </div>
+                            <button>
+                                <span class="iconify" data-inline="false" data-icon="akar-icons:link-out" style="color: #FF4957; font-size: 26px;"></span>
+                                <span>Статистика</span>
+                            </button>
+                        </div>
+                        <div class="section-icon">
+                            <img src="./assets/imgs/stat.png" alt="stat">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <section class="prefooter">
+            <div class="prefooter-heading">Хоккей — единственная игра, где еще можно увидеть, как дерутся двое белых парней.</div>
+        </section>
+
+        <section class="footer">
+            <div class="footer-content">
+                <img src="./assets/imgs/logo.png" alt="logo">
+
+                <div class="footer-links">
+                    <div class="footer-link">
+                        <h3>Чемпионат</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Таблица</a></li>
+                                <li><a href="#">Статистика</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-link">
+                        <h3>Команды</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Составы</a></li>
+                                <li><a href="#">Галерея</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-link">
+                        <h3>Контакты</h3>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <img class="phone-icon" src="./assets/imgs/phone.svg" alt="phone">
+                                    <a href="tel:+375291234567">+375291234567</a>
+                                </li>
+                                <li>
+                                    <img class="mail-icon" src="./assets/imgs/mail.svg" alt="mail">
+                                    <a href="mailto:hockey@hockey.hoc">hockey@hockey.hoc</a>
+                                </li>
+                                <li>
+                                    <img class="geo-icon" src="./assets/imgs/geo.svg" alt="geo">
+                                    <a target="_blank" href="https://www.google.ru/maps/place/%D1%83%D0%BB.+%D0%9A%D0%B0%D1%80%D0%BB%D0%B0+%D0%9C%D0%B0%D1%80%D0%BA%D1%81%D0%B0+30,+%D0%9C%D0%B8%D0%BD%D1%81%D0%BA/@53.8993026,27.5587308,17z/data=!3m1!4b1!4m5!3m4!1s0x46dbcfc3d7931f8d:0x97dcbd7fdc6f1908!8m2!3d53.8993026!4d27.5609195">ул. Карла Маркса 30</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#top">
+                <div class="to-up">
+                    <img src="./assets/imgs/to-up.svg" alt="top-up">
+                </div>
+            </a>
+
+        </section>
+    </footer>
+    <article class="developers">
+        <span class="c">© 2021</span>
+        <a href="#" class="plekhanov-dev">Сайт разработан Лабораторией им. Плеханова</a>
+        <img src="./assets/imgs/lab.svg" alt="lab">
+    </article>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>

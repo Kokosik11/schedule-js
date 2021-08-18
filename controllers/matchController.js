@@ -58,12 +58,12 @@ exports.createMatch = (req, res) => {
 }
 
 exports.findByMonth = (req, res) => {
-    const { monthReq } = req.params;
+    const { monthReq, yearReq } = req.params;
 
     console.log(monthReq)
     // console.log(new Date(matchDate))
 
-    MatchModel.find({ 'matchDate.month': { $eq: monthReq } }, (err, match) => {
+    MatchModel.find({ 'matchDate.month': { $eq: monthReq }, 'matchDate.year': { $eq: yearReq } }, (err, match) => {
         if(err) {
             console.log("Матч не найден")
             res.send({err:"Матч не найден"});
