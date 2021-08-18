@@ -23,7 +23,12 @@
 
 // let teams = [];
 // let match = {
-//     matchDate: "12.11.2021",
+//     matchDate: {
+//         time: "12:00",
+//         day: "30",
+//         month: "8",
+//         year: "2021"
+//     },
 //     matchTeams: []
 // };
 
@@ -48,7 +53,7 @@
 // console.log(teams);
 // console.log(match);
 
-/* --------------------- Создание матча POST --------------------- */
+// /* --------------------- Создание матча POST --------------------- */
 
 // const createMatch = (match) => {
 //     let response = fetch('/match/create', {
@@ -77,3 +82,10 @@
 //                 console.log(json);
 //             })
 //     })
+
+fetch('/match/findByMonth/10')
+    .then(response => response.ok ? response : Promise.reject(response))
+    .then(response => response.json()) // или как текст `response.text()`
+    .then(json => {
+        console.log(json)
+    })

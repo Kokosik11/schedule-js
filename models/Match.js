@@ -3,7 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const matchSchema = new Schema({
-    matchDate: Date,
+    matchDate: {
+        time: String,
+        day: String,
+        month: String,
+        year: String
+    },
     teams: [
         { type: Schema.Types.ObjectId, ref: "Team" },
         { type: Schema.Types.ObjectId, ref: "Team" }
