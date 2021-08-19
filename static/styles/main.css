@@ -321,6 +321,18 @@ h1 {
     line-height: 77px;
 }
 
+.date-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.date-content img {
+    width: 50px;
+    max-height: 50px;
+}
+
 .news {
     display: flex;
     justify-content: center;

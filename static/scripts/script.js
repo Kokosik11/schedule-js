@@ -172,7 +172,9 @@ const getCeils = (date) => {
             }
             // ceils = new Set(ceils);
             console.log(ceils)
-            renderCeils(ceils);
+            setTimeout(() => {
+                renderCeils(ceils);
+            }, 1000)
         })
 }
 
