@@ -10,8 +10,16 @@ const matchSchema = new Schema({
         year: String
     },
     teams: [
-        { type: Schema.Types.ObjectId, ref: "Team" },
-        { type: Schema.Types.ObjectId, ref: "Team" }
+        { 
+            id: String,
+            name: String,
+            image: String, 
+        },
+        { 
+            id: String,
+            name: String,
+            image: String, 
+        }
     ]
 });
 

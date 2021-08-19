@@ -25,8 +25,8 @@
 // let match = {
 //     matchDate: {
 //         time: "12:00",
-//         day: "30",
-//         month: "8",
+//         day: "7",
+//         month: "9",
 //         year: "2021"
 //     },
 //     matchTeams: []
@@ -37,7 +37,11 @@
 //     .then(response => response.json()) // или как текст `response.text()`
 //     .then(json => {
 //         teams.push(json);
-//         match.matchTeams.push(json._id)
+//         let team = {};
+//         team.id = json._id;
+//         team.name = json.name;
+//         team.image = json.image;
+//         match.matchTeams.push(team)
 //     })
 
 // fetch('/team/Griffons')
@@ -45,15 +49,32 @@
 //     .then(response => response.json()) // или как текст `response.text()`
 //     .then(json => {
 //         teams.push(json);
-//         match.matchTeams.push(json._id);
+//         let team = {};
+//         team.id = json._id;
+//         team.name = json.name;
+//         team.image = json.image;
+//         match.matchTeams.push(team)
 //         createMatch(match);
 //     })
+
+// // fetch('/team/Dinamo')
+// //     .then(response => response.ok ? response : Promise.reject(response))
+// //     .then(response => response.json()) // или как текст `response.text()`
+// //     .then(json => {
+// //         teams.push(json);
+// //         let team = {};
+// //         team.id = json._id;
+// //         team.name = json.name;
+// //         team.image = json.image;
+// //         match.matchTeams.push(team)
+// //         createMatch(match);
+// //     })
 
 
 // console.log(teams);
 // console.log(match);
 
-// /* --------------------- Создание матча POST --------------------- */
+// // /* --------------------- Создание матча POST --------------------- */
 
 // const createMatch = (match) => {
 //     let response = fetch('/match/create', {
@@ -90,6 +111,9 @@
 //         console.log(json)
 //     })
 
+
+
+
 Date.prototype.daysInMonth = function() {
     return 32 - new Date(this.getFullYear(), this.getMonth(), 32).getDate();
 };
@@ -118,6 +142,7 @@ arrows.forEach(arrow => {
 
 const renderCeils = (ceils) => {
     const ceilsDOM = document.querySelector('.ceils-content');
+    ceilsDOM.innerHTML = "";
 
     ceils.forEach(ceil => {
         if(ceil.teams) {
@@ -147,98 +172,15 @@ const getCeils = (date) => {
                 json.forEach(j => {
                     for(i = 0; i < ceils.length; i++) {
                         if(j.matchDate.day == ceils[i].day) {
-                            let teams = [];
-                            fetch(`/team/findByID/${j.teams[0]}`)
-                                .then(response => response.ok ? response : Promise.reject(response))
-                                .then(response => response.json()) // или как текст `response.text()`
-                                .then(data => { 
-                                    console.log(data);
-                                    teams.push(data);
-                                })
-
-                            fetch(`/team/findByID/${j.teams[1]}`)
-                                .then(response => response.ok ? response : Promise.reject(response))
-                                .then(response => response.json()) // или как текст `response.text()`
-                                .then(data => { 
-                                    console.log(data);
-                                    teams.push(data);
-                                })
-
-                            ceils[i] = {day: i + 1, teams: teams};
-                            
+                            ceils[i] = { day: i + 1, teams: [...j.teams] };
                         }
                     }
                 })
             }
             // ceils = new Set(ceils);
             console.log(ceils)
-            setTimeout(() => {
-                renderCeils(ceils);
-            }, 1000)
+            renderCeils(ceils);
         })
 }
-
-// const getCeils = (date) => {
-//     return new Promise( (resolve, reject) => {
-//         fetch(`/match/findByMonth/${date.getMonth() + 1}/${date.getFullYear()}`)
-//             .then(response => response.ok ? response : Promise.reject(response))
-//             .then(response => response.json()) // или как текст `response.text()`
-//             .then(json => {
-//                 console.log(json)
-//                 let ceils = [];
-//                 for(let i = 0; i < date.daysInMonth(); i++) {
-//                     ceils.push( { day: i + 1 });
-//                 }
-
-//                 if(!json.err) {
-//                     json.forEach(j => {
-//                         for(i = 0; i < ceils.length; i++) {
-//                             if(j.matchDate.day == ceils[i].day) {
-//                                 let teams = [];
-//                                 fetch(`/team/findByID/${j.teams[0]}`)
-//                                     .then(response => response.ok ? response : Promise.reject(response))
-//                                     .then(response => response.json()) // или как текст `response.text()`
-//                                     .then(data => { 
-//                                         console.log(data);
-//                                         teams.push(data);
-//                                     })
-
-//                                 fetch(`/team/findByID/${j.teams[1]}`)
-//                                     .then(response => response.ok ? response : Promise.reject(response))
-//                                     .then(response => response.json()) // или как текст `response.text()`
-//                                     .then(data => { 
-//                                         console.log(data);
-//                                         teams.push(data);
-//                                     })
-
-//                                 ceils[i] = {day: i + 1, teams: teams};
-                                
-//                             }
-//                         }
-//                     })
-//                 }
-//                 // ceils = new Set(ceils);
-//                 console.log(ceils)
-//                 // renderCeils(ceils);
-//                 resolve(ceils);
-//             })
-//     })
-// }
-
-// getCeils().then( ceils =>  {
-//     const ceilsDOM = document.querySelector('.ceils-content');
-
-//     ceils.forEach(ceil => {
-//         if(ceil.teams) {
-//             console.log(ceil.teams.image)
-//             let ceilDOM = `<div class="date"><span class="day">${ceil.day}</span><span class="date-content"><img src="${ceil.teams[0].image}"><img src="${ceil.teams[1].image}"></span></div>`
-//             ceilsDOM.innerHTML += ceilDOM;
-//         } 
-//         else {
-//             let ceilDOM = `<div class="date"><span class="day">${ceil.day}</span><span class="date-content"></span></div>`
-//             ceilsDOM.innerHTML += ceilDOM;
-//         }
-//     })
-// })
 
 renderMonth(date.getMonth());
